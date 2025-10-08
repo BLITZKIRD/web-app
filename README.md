@@ -6,6 +6,7 @@
 
 # Клонировать репозиторий
 git clone https://github.com/your-username/password-generator.git
+
 cd password-generator
 
 # Установить зависимости
