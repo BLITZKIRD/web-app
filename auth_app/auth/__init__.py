@@ -1,0 +1,1 @@
+# Makes the auth package importable
