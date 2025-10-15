@@ -1,40 +1,60 @@
-Генератор паролей
+Flask Authentication App
 
-Генератор паролей на Flask.
+Приложение для аутентификации и авторизации пользователей на чистом Flask (без дополнительных расширений).
 
-Установка и запуск
+## Особенности
 
+- Использует только Flask (без Flask-SQLAlchemy, Flask-Login и других расширений)
+- Нативная работа с SQLite через sqlite3
+- Сессионная аутентификация
+- Хеширование паролей через Werkzeug (встроено в Flask)
+- Регистрация и вход пользователей
+- Защищенные маршруты
+
+## Установка и запуск
+
+```bash
 # Клонировать репозиторий
-git clone https://github.com/your-username/password-generator.git
+git clone https://github.com/your-username/flask-auth-app.git
 
-cd password-generator
+cd flask-auth-app
 
 # Установить зависимости
-pip install flask
+pip install -r auth_app/requirements.txt
 
 # Запустить приложение
-python app.py
+python -m auth_app.app
+```
 
 Перейдите по адресу: http://localhost:5000
 
-Использование
+## Использование
 
-Укажите длину пароля
-Выберите типы символов: · Заглавные буквы (A-Z) · Строчные буквы (a-z) · Цифры (0-9) · Специальные символы
-Нажмите "Сгенерировать пароль"
-Структура
+1. Перейдите на `/register` для регистрации нового пользователя
+2. Войдите в систему на `/login`
+3. Просмотрите профиль на `/profile`
+4. Выйдите из системы через `/logout`
 
-password-generator/
-├── app.py              # Flask приложение
+## Структура
 
-├── templates/
+```
+auth_app/
+├── app.py              # Главное Flask приложение
+├── auth/
+│   ├── models.py      # Модели пользователей (sqlite3)
+│   └── routes.py      # Маршруты аутентификации
+├── templates/         # HTML шаблоны
+│   ├── base.html
+│   ├── login.html
+│   ├── register.html
+│   └── profile.html
+├── requirements.txt   # Зависимости (только Flask)
+└── __init__.py
+```
 
-│   └── index.html     # HTML шаблон
+## Технологии
 
-├── static/
-
-│   └── style.css      # Стили
-
-└── README.md
-Скрин сайта
-<img width="1920" height="1080" alt="Screenshot_9" src="https://github.com/user-attachments/assets/a264c313-e6a4-4ee2-97fe-a489f589847e" />
+- **Flask 3.0.3** - веб-фреймворк
+- **SQLite** - база данных (нативный sqlite3)
+- **Werkzeug** - хеширование паролей (встроено в Flask)
+- **Sessions** - аутентификация пользователей
