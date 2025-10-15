@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Вход - Генератор паролей{% endblock %}
+{% block header %}Вход в систему{% endblock %}
+
+{% block content %}
+<div class="auth-form">
+    <form method="POST">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        
+        <button type="submit" class="btn primary">Войти</button>
+    </form>
+    
+    <div class="auth-links">
+        <p>Нет аккаунта? <a href="{{ url_for('register') }}">Зарегистрироваться</a></p>
+        <p><a href="{{ url_for('index') }}">← На главную</a></p>
+    </div>
+</div>
+{% endblock %}
