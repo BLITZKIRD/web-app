@@ -26,10 +26,15 @@ python app.py
 
 password-generator/
 ├── app.py              # Flask приложение
+
 ├── templates/
+
 │   └── index.html     # HTML шаблон
+
 ├── static/
+
 │   └── style.css      # Стили
+
 └── README.md
 Скрин сайта
 <img width="1920" height="1080" alt="Screenshot_9" src="https://github.com/user-attachments/assets/a264c313-e6a4-4ee2-97fe-a489f589847e" />
