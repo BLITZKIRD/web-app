@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                👤
+            </div>
+            <h2>Профиль пользователя</h2>
+        </div>
+        
+        <div class="profile-info">
+            <div class="info-group">
+                <label>Email</label>
+                <div class="info-value">{{ user.email }}</div>
+            </div>
+            
+            <div class="info-group">
+                <label>Дата регистрации</label>
+                <div class="info-value">{{ user.created_at.strftime('%d.%m.%Y в %H:%M') }}</div>
+            </div>
+        </div>
+        
+        <div class="profile-actions">
+            <a href="{{ url_for('password_generator') }}" class="btn btn-primary">
+                🔐 Генератор паролей
+            </a>
+            <a href="{{ url_for('logout') }}" class="btn btn-secondary">
+                🚪 Выйти из системы
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
